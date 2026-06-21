@@ -1,0 +1,554 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoData Pro | User Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        [data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-fixed": "#d3e4ff",
+                        "secondary-container": "#fc9910",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#003860",
+                        "outline-variant": "#c3c6d0",
+                        "on-error-container": "#93000a",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed-variant": "#1c4876",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-subtle": "#F8FAFC",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#001d35",
+                        "secondary-fixed-dim": "#ffb86e",
+                        "on-tertiary-container": "#56a3ef",
+                        "tertiary": "#00223e",
+                        "on-primary-fixed": "#001c38",
+                        "outline": "#737780",
+                        "border-muted": "#E2E8F0",
+                        "on-primary-container": "#7aa1d4",
+                        "tertiary-fixed": "#d1e4ff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#00497b",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed": "#ffdcbd",
+                        "secondary": "#8a5100",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#a2c9fe",
+                        "primary": "#002140",
+                        "danger-economic": "#EF4444",
+                        "primary-fixed-dim": "#a2c9fe",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#38608f",
+                        "success-economic": "#10B981",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed-dim": "#9dcaff",
+                        "on-surface-variant": "#42474f",
+                        "inverse-surface": "#213145",
+                        "primary-container": "#003764",
+                        "on-secondary-fixed": "#2c1600",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-container": "#643900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "data-mono": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface-subtle text-on-background overflow-hidden h-screen">
+<!-- Sidebar Navigation Shell -->
+<aside class="bg-primary-container text-on-primary-container flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-outline-variant py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">EcoData Pro</h1>
+<p class="font-label-sm text-label-sm text-on-primary-container/60 tracking-wider">INSTITUTIONAL ACCESS</p>
+</div>
+<nav class="flex-grow space-y-1 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-3 px-3 py-3 rounded text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150" href="./dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150" href="./economic-indices.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-body-md text-body-md">Economic Indices</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150" href="./pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md">Pricing Plans</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded bg-secondary-container text-on-secondary-container border-l-4 border-secondary-container font-bold transition-colors active:scale-95 duration-150" href="./users.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 rounded text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150" href="./math-ai.html">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+<span class="font-body-md text-body-md">Math AI</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-on-primary/10 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors" href="./users.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors" href="./index.html">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+<div class="mt-4 px-2">
+<button class="w-full bg-on-primary text-primary py-2 rounded-lg font-bold hover:bg-surface-container-highest transition-all duration-150 active:scale-95">
+                    Export Report
+                </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 h-screen flex flex-col overflow-hidden">
+<!-- Top Bar Shell -->
+<header class="h-16 bg-white border-b border-border-muted flex justify-between items-center px-8 z-40 sticky top-0">
+<div class="flex items-center bg-surface-subtle border border-border-muted rounded-full px-4 py-1.5 w-96 focus-within:ring-2 focus-within:ring-primary-container/20 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-on-surface-variant/50" placeholder="Global system search..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./economic-indices.html">Markets</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./users.html">Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./math-ai.html">Forecasts</a>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant border-l border-border-muted pl-6">
+<button class="p-2 hover:bg-surface-container rounded-full transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-danger-economic rounded-full"></span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="w-8 h-8 rounded-full border border-border-muted overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up professional portrait of a senior financial analyst in a modern office, cinematic natural lighting, corporate minimalist style with soft blue and grey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwtE_1kbdEX5UHbhYH6_T5VrC-ceXsClmlMd7z2y7ZHIgoqSUuyYEfGK35evxbHyuGdJP6DiSnQVa5t0V9DupBoq6RJwWYkDLUEYtXFnoJYdVx0yk8qBeNTXHFCMFCOX4INlavj3IKeivev4zYBt8-0Byf9E9Nfn3_gnUtHkGvxc7ojBUEc7S3B5EqvziAaPbsgGdrgVHXSkQ-cfY7IQ1Pa00wKMmAFw-ulqcpiqEUq-7kUtvTjVv0jqcCLEkcgk5xTvmcx_73znTi"/>
+</div>
+<span class="material-symbols-outlined text-xs group-hover:translate-y-0.5 transition-transform" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-grow overflow-y-auto p-8 custom-scrollbar">
+<div class="max-w-container-max mx-auto space-y-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">User Management</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Manage institutional access levels and user permissions.</p>
+</div>
+<button class="flex items-center gap-2 bg-primary-container text-on-primary px-6 py-2.5 rounded-lg font-bold hover:shadow-lg transition-all active:scale-95" onclick="toggleModal('addUserModal')">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                        Add New User
+                    </button>
+</div>
+<!-- Stats Overview Bento -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white p-6 rounded-xl border border-border-muted shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Users</span>
+<div class="flex items-baseline gap-3 mt-2">
+<span class="font-headline-md text-headline-md text-primary">1,284</span>
+<span class="text-success-economic font-label-md flex items-center">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_upward">arrow_upward</span> 4%
+                            </span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-border-muted shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Active Now</span>
+<div class="flex items-baseline gap-3 mt-2">
+<span class="font-headline-md text-headline-md text-primary">412</span>
+<span class="text-on-surface-variant/50 font-body-sm italic">Live</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-border-muted shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Institutional Seats</span>
+<div class="flex items-baseline gap-3 mt-2">
+<span class="font-headline-md text-headline-md text-primary">12/15</span>
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-[80%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-border-muted shadow-sm flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pending Invites</span>
+<div class="flex items-baseline gap-3 mt-2">
+<span class="font-headline-md text-headline-md text-primary">18</span>
+<span class="text-on-surface-variant/50 font-body-sm italic">Expiring</span>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-white rounded-xl border border-border-muted shadow-sm overflow-hidden">
+<!-- Filter Bar -->
+<div class="p-6 border-b border-border-muted flex flex-col sm:flex-row gap-4 justify-between items-center">
+<div class="relative w-full sm:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="pl-10 w-full border-border-muted rounded-lg focus:ring-primary-container focus:border-primary-container text-sm py-2" placeholder="Search by name, email, or institution..." type="text"/>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<select class="border-border-muted rounded-lg text-sm py-2 px-4 focus:ring-primary-container bg-white">
+<option>All Plans</option>
+<option>Enterprise</option>
+<option>Academic</option>
+<option>Institutional</option>
+</select>
+<select class="border-border-muted rounded-lg text-sm py-2 px-4 focus:ring-primary-container bg-white">
+<option>Status</option>
+<option>Active</option>
+<option>Inactive</option>
+<option>Suspended</option>
+</select>
+<button class="flex items-center gap-2 border border-border-muted px-4 py-2 rounded-lg text-sm font-medium hover:bg-surface-subtle transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+                                More
+                            </button>
+</div>
+</div>
+<!-- User Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-subtle border-b border-border-muted">
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider w-12">
+<input class="rounded border-border-muted text-primary focus:ring-primary-container" type="checkbox"/>
+</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">User</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Plan</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Last Login</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-muted">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-border-muted text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container font-bold text-sm">
+                                                JD
+                                            </div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-primary">Jane Doe</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">jane.doe@centralbank.gov</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-surface-container text-primary font-label-sm text-[11px] px-2 py-1 rounded uppercase tracking-wide">Enterprise</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-success-economic">
+<span class="w-2 h-2 rounded-full bg-success-economic"></span>
+<span class="font-label-md text-label-md">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-on-surface-variant">
+                                        Oct 12, 2023 · 14:24
+                                    </td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-danger-economic transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-border-muted text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male analyst in professional business casual attire, neutral background, sharp focus, high-end photography for corporate directory, light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9PyYjSPTaJV2rwDyWuxRfKwc48NVPKtRhp1iBLExV9hL0lwYORB5hHbTftLNU5pPhGvzzc60XrAgAhgkaQcJ_m5D2p1anLWtVFwOp32n83hzAjJfBu3zLKQvPKZbBZGuW47zCcd_q74Lm0bgUg2EhHNtDEFvzcJPeN06Q44XurF6LzhL4NySH5HmmhU57O75i4Zcs9ITMg-M4vGKaXrROqFYUAulRVqAUcWC_-vCdU5g2LLtee0KjixbeUvxSbZbqWpUgMny3Q9oB"/>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-primary">Marcus Aurelius</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">m.aurelius@investcorp.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-surface-container text-primary font-label-sm text-[11px] px-2 py-1 rounded uppercase tracking-wide">Institutional</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-success-economic">
+<span class="w-2 h-2 rounded-full bg-success-economic"></span>
+<span class="font-label-md text-label-md">Active</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-on-surface-variant">
+                                        Oct 14, 2023 · 09:12
+                                    </td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-danger-economic transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-border-muted text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-on-secondary-container/10 flex items-center justify-center text-on-secondary-container font-bold text-sm">
+                                                SL
+                                            </div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-primary">Sarah Lund</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">s.lund@unipress.org</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] px-2 py-1 rounded uppercase tracking-wide">Academic</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-md text-label-md">Inactive</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-on-surface-variant">
+                                        Aug 21, 2023 · 11:45
+                                    </td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-danger-economic transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-border-muted text-primary focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container font-bold text-sm">
+                                                EK
+                                            </div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-primary">Erik Karlsson</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">e.karlsson@nordicfinance.se</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="bg-surface-container text-primary font-label-sm text-[11px] px-2 py-1 rounded uppercase tracking-wide">Enterprise</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2 text-danger-economic">
+<span class="w-2 h-2 rounded-full bg-danger-economic"></span>
+<span class="font-label-md text-label-md">Suspended</span>
+</div>
+</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-on-surface-variant">
+                                        Oct 05, 2023 · 22:10
+                                    </td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-danger-economic transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-border-muted flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <span class="font-bold text-primary">1 - 4</span> of 1,284 users</span>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded border border-border-muted text-on-surface-variant hover:bg-surface-subtle disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary-container text-on-primary font-bold text-sm">1</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container text-on-surface-variant text-sm transition-colors">2</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container text-on-surface-variant text-sm transition-colors">3</button>
+<span class="px-1">...</span>
+<button class="w-8 h-8 rounded hover:bg-surface-container text-on-surface-variant text-sm transition-colors">32</button>
+<button class="p-1.5 rounded border border-border-muted text-on-surface-variant hover:bg-surface-subtle">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal: Add New User -->
+<div class="fixed inset-0 z-[100] hidden" id="addUserModal">
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm" onclick="toggleModal('addUserModal')"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-xl shadow-2xl border border-border-muted overflow-hidden">
+<div class="px-6 py-4 border-b border-border-muted flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-primary">Add Institutional User</h3>
+<button class="p-2 hover:bg-surface-subtle rounded-full transition-all" onclick="toggleModal('addUserModal')">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<form class="p-6 space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant block">First Name</label>
+<input class="w-full border-border-muted rounded-lg focus:ring-primary-container py-2 text-sm" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant block">Last Name</label>
+<input class="w-full border-border-muted rounded-lg focus:ring-primary-container py-2 text-sm" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant block">Professional Email</label>
+<input class="w-full border-border-muted rounded-lg focus:ring-primary-container py-2 text-sm" placeholder="example@institution.org" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant block">Assigned Plan</label>
+<select class="w-full border-border-muted rounded-lg focus:ring-primary-container py-2 text-sm bg-white">
+<option>Enterprise</option>
+<option>Institutional</option>
+<option>Academic</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface-variant block">Access Level</label>
+<select class="w-full border-border-muted rounded-lg focus:ring-primary-container py-2 text-sm bg-white">
+<option>Analyst</option>
+<option>Senior Manager</option>
+<option>Billing Admin</option>
+<option>View Only</option>
+</select>
+</div>
+</div>
+<div class="pt-4 flex justify-end gap-3">
+<button class="px-6 py-2 rounded-lg font-bold text-on-surface-variant hover:bg-surface-subtle transition-all" onclick="toggleModal('addUserModal')" type="button">Cancel</button>
+<button class="px-6 py-2 rounded-lg font-bold bg-primary-container text-on-primary hover:shadow-lg transition-all active:scale-95" type="submit">Send Invitation</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+
+        // Simple row hover interaction simulation
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', (e) => {
+                if (e.target.type !== 'checkbox' && !e.target.closest('button')) {
+                    const name = row.querySelector('.font-semibold').textContent;
+                    console.log(`Selecting user: ${name}`);
+                }
+            });
+        });
+    </script>
+</body></html>

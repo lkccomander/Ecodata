@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoData Pro | Economic Intelligence Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "primary-fixed": "#d3e4ff",
+                    "secondary-container": "#fc9910",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#003860",
+                    "outline-variant": "#c3c6d0",
+                    "on-error-container": "#93000a",
+                    "on-background": "#0b1c30",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#1c4876",
+                    "on-secondary-fixed-variant": "#693c00",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-subtle": "#F8FAFC",
+                    "surface-container": "#e5eeff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#001d35",
+                    "secondary-fixed-dim": "#ffb86e",
+                    "on-tertiary-container": "#56a3ef",
+                    "tertiary": "#00223e",
+                    "on-primary-fixed": "#001c38",
+                    "outline": "#737780",
+                    "border-muted": "#E2E8F0",
+                    "on-primary-container": "#7aa1d4",
+                    "tertiary-fixed": "#d1e4ff",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#00497b",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed": "#ffdcbd",
+                    "secondary": "#8a5100",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#a2c9fe",
+                    "primary": "#002140",
+                    "danger-economic": "#EF4444",
+                    "primary-container": "#003764",
+                    "on-secondary-fixed": "#2c1600",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-container": "#643900",
+                    "success-economic": "#10B981"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "unit": "4px",
+                    "margin-desktop": "40px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "data-mono": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .sparkline-svg {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 2s ease-in-out forwards;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E2E8F0;
+        }
+        .sidebar-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="sidebar-transition h-screen w-64 fixed left-0 top-0 bg-primary-container text-on-primary-container flex flex-col py-6 px-4 border-r border-outline-variant z-50">
+<div class="mb-10 px-2">
+<h1 class="font-headline-md text-headline-md font-bold text-white tracking-tight">EcoData Pro</h1>
+<p class="text-on-primary-container/60 font-label-sm text-label-sm uppercase tracking-widest mt-1">Institutional Access</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active State: Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-secondary-container text-on-secondary-container border-l-4 border-secondary-container font-bold rounded-r-lg transition-colors" href="./dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container/70 hover:bg-primary/20 hover:text-white rounded-lg transition-colors active:scale-95 duration-150" href="./economic-indices.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-body-md text-body-md">Economic Indices</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container/70 hover:bg-primary/20 hover:text-white rounded-lg transition-colors active:scale-95 duration-150" href="./pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md">Pricing Plans</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container/70 hover:bg-primary/20 hover:text-white rounded-lg transition-colors active:scale-95 duration-150" href="./users.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-on-primary-container/70 hover:bg-primary/20 hover:text-white rounded-lg transition-colors active:scale-95 duration-150" href="./math-ai.html">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+<span class="font-body-md text-body-md">Math AI</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-white/10 pt-6 space-y-2">
+<button class="w-full bg-white/10 hover:bg-white/20 text-white font-label-md text-label-md py-3 px-4 rounded-lg flex items-center justify-center gap-2 mb-6 transition-all">
+<span class="material-symbols-outlined" data-icon="file_download">file_download</span>
+                Export Report
+            </button>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:text-white transition-colors" href="./users.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-primary-container/70 hover:text-white transition-colors" href="./index.html">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface z-40 flex justify-between items-center px-8 border-b border-border-muted">
+<div class="flex items-center gap-6">
+<h2 class="font-headline-sm text-headline-sm font-black text-primary uppercase tracking-tighter">Economic Intelligence Platform</h2>
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-outline">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border border-border-muted rounded-full font-body-sm text-body-sm w-64 focus:ring-2 focus:ring-primary focus:outline-none transition-all" placeholder="Search data points..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-label-md text-label-md text-primary border-b-2 border-secondary-container pb-1" href="./dashboard.html">Markets</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./users.html">Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./pricing.html">Forecasts</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/10">
+<img class="w-full h-full object-cover" data-alt="Corporate headshot of a senior financial analyst in a modern, minimalist workspace with soft natural light. The analyst is looking directly at the camera with a confident, professional expression. The background features clean architectural lines and a muted color palette of cool grays and blues, reinforcing institutional trust and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5rRLyPRG9vs9VtXS1NK2v6VCmHMtUY2kHJC-OuJixloBMN5d_DI3IQn_fL2A-ywwVsiPKnAdsskIaE6IwIuIxNhG2_LRocJVEZtabhqXMyqs1sCRXy-yxctNVMflkUksJ6qP6seMiXIrG4v7Tev4t25VEQ3x3gPymIIHAPS71Pu4mkyEI8BO6dkq9Hy6ssa6158mJ5RSgj039sUQAhtTYCPEHqfabzHazklbJrUrJjck1FNiSXVXV4xoJFPCz1t9ijajdBnWVdkQ3"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="mt-16 p-8 max-w-container-max w-full mx-auto">
+<!-- Dashboard Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary">Global Macro Overview</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Real-time indicators across primary economic markets.</p>
+</div>
+<div class="flex gap-2 bg-surface-container-low p-1 rounded-lg border border-border-muted">
+<button class="px-4 py-1.5 bg-white shadow-sm font-label-md text-label-md text-primary rounded-md">Real-time</button>
+<button class="px-4 py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-white/50 rounded-md">Historical</button>
+<button class="px-4 py-1.5 font-label-md text-label-md text-on-surface-variant hover:bg-white/50 rounded-md">Projections</button>
+</div>
+</div>
+<!-- Bento Grid - Macro Data -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<!-- GDP Growth Card -->
+<div class="col-span-12 lg:col-span-4 glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Global GDP Growth</p>
+<h4 class="font-headline-md text-headline-md text-primary mt-1">2.4%</h4>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-success-economic font-data-mono text-data-mono flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                                +0.3%
+                            </span>
+<span class="text-on-surface-variant/40 text-[10px] uppercase">v Prev. Quarter</span>
+</div>
+</div>
+<div class="h-16 w-full overflow-hidden">
+<svg class="w-full h-full" viewbox="0 0 400 100">
+<path class="sparkline-svg" d="M0,80 Q50,70 100,85 T200,60 T300,40 T400,20" fill="none" stroke="#006FB7" stroke-width="3"></path>
+<path d="M0,80 Q50,70 100,85 T200,60 T300,40 T400,20 L400,100 L0,100 Z" fill="url(#gradient-gdp)" opacity="0.1"></path>
+<defs>
+<lineargradient id="gradient-gdp" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#006FB7;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#006FB7;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- Inflation Card -->
+<div class="col-span-12 lg:col-span-4 glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Consumer Price Index</p>
+<h4 class="font-headline-md text-headline-md text-primary mt-1">3.1%</h4>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-danger-economic font-data-mono text-data-mono flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                                +0.8%
+                            </span>
+<span class="text-on-surface-variant/40 text-[10px] uppercase">v Target (2.0%)</span>
+</div>
+</div>
+<div class="h-16 w-full overflow-hidden">
+<svg class="w-full h-full" viewbox="0 0 400 100">
+<path class="sparkline-svg" d="M0,20 Q50,30 100,25 T200,50 T300,70 T400,80" fill="none" stroke="#EF4444" stroke-width="3"></path>
+<path d="M0,20 Q50,30 100,25 T200,50 T300,70 T400,80 L400,100 L0,100 Z" fill="url(#gradient-inf)" opacity="0.1"></path>
+<defs>
+<lineargradient id="gradient-inf" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#EF4444;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#EF4444;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<!-- Unemployment Card -->
+<div class="col-span-12 lg:col-span-4 glass-card p-6 rounded-xl hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Unemployment Rate</p>
+<h4 class="font-headline-md text-headline-md text-primary mt-1">3.8%</h4>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-success-economic font-data-mono text-data-mono flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_down">trending_down</span>
+                                -0.1%
+                            </span>
+<span class="text-on-surface-variant/40 text-[10px] uppercase">Full Employment Peak</span>
+</div>
+</div>
+<div class="h-16 w-full overflow-hidden">
+<svg class="w-full h-full" viewbox="0 0 400 100">
+<path class="sparkline-svg" d="M0,50 Q100,45 200,55 T400,40" fill="none" stroke="#10B981" stroke-width="3"></path>
+<path d="M0,50 Q100,45 200,55 T400,40 L400,100 L0,100 Z" fill="url(#gradient-emp)" opacity="0.1"></path>
+<defs>
+<lineargradient id="gradient-emp" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#10B981;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#10B981;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Detailed Grid -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Microeconomic Sector Performance -->
+<div class="col-span-12 lg:col-span-8 bg-white border border-border-muted p-8 rounded-xl shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h5 class="font-headline-md text-headline-md text-primary">Sector Performance Heatmap</h5>
+<button class="text-on-tertiary-fixed-variant font-label-md text-label-md hover:underline">View All Sectors</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Sector Item -->
+<div class="bg-surface-subtle p-4 rounded-lg border border-border-muted hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform mb-2" data-icon="devices">devices</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Technology</p>
+<p class="font-headline-sm text-headline-sm text-success-economic">+12.4%</p>
+</div>
+<div class="bg-surface-subtle p-4 rounded-lg border border-border-muted hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform mb-2" data-icon="account_balance">account_balance</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Financials</p>
+<p class="font-headline-sm text-headline-sm text-success-economic">+4.2%</p>
+</div>
+<div class="bg-surface-subtle p-4 rounded-lg border border-border-muted hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform mb-2" data-icon="bolt">bolt</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Energy</p>
+<p class="font-headline-sm text-headline-sm text-danger-economic">-2.1%</p>
+</div>
+<div class="bg-surface-subtle p-4 rounded-lg border border-border-muted hover:border-primary-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform mb-2" data-icon="health_and_safety">health_and_safety</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Healthcare</p>
+<p class="font-headline-sm text-headline-sm text-primary">+0.8%</p>
+</div>
+<!-- Sector Map Mockup -->
+<div class="col-span-full h-64 bg-surface-container-low rounded-xl relative mt-4 overflow-hidden border border-border-muted group">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(0,55,100,0.05),_transparent)]"></div>
+
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<h6 class="font-headline-md text-headline-md text-primary-container z-10">Advanced Predictive Map</h6>
+<p class="text-on-surface-variant/60 font-body-sm text-body-sm z-10">Select a region to analyze sector concentration</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Commodity Prices -->
+<div class="col-span-12 lg:col-span-4 bg-white border border-border-muted rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-6 border-b border-border-muted flex justify-between items-center">
+<h5 class="font-headline-md text-headline-md text-primary">Commodities</h5>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</div>
+<div class="flex-1">
+<table class="w-full text-left">
+<thead class="bg-surface-subtle border-b border-border-muted">
+<tr>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase">Asset</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase text-right">Price</th>
+<th class="px-6 py-3 font-label-sm text-label-sm text-on-surface-variant uppercase text-right">Chg%</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-muted">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#F39200]"></span> Gold
+                                    </td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right">$2,042.50</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right text-success-economic">+0.45%</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#002140]"></span> Crude Oil
+                                    </td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right">$78.12</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right text-danger-economic">-1.20%</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#006FB7]"></span> Natural Gas
+                                    </td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right">$1.84</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right text-danger-economic">-3.15%</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#EF4444]"></span> Copper
+                                    </td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right">$3.84</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right text-success-economic">+0.82%</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4 font-body-md text-body-md text-primary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span> Silver
+                                    </td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right">$22.95</td>
+<td class="px-6 py-4 font-data-mono text-data-mono text-right text-on-surface-variant">0.00%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-subtle mt-auto">
+<div class="relative h-24 w-full bg-white rounded border border-border-muted p-2">
+<div class="absolute inset-x-2 top-2 flex justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Commodity Volatility Index</span>
+<span class="font-data-mono text-data-mono text-primary">18.4</span>
+</div>
+<!-- Small Canvas for script-based sparkline -->
+<canvas class="w-full h-full" id="volatility-canvas"></canvas>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto py-6 px-8 border-t border-border-muted text-on-surface-variant/60 font-body-sm text-body-sm flex justify-between items-center">
+<p>© 2024 EcoData Pro. Institutional Data License v4.2.1</p>
+<div class="flex gap-6">
+<a class="hover:text-primary transition-colors" href="./pricing.html">Term of Service</a>
+<a class="hover:text-primary transition-colors" href="./users.html">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="./dashboard.html">API Documentation</a>
+</div>
+</footer>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Draw a micro-chart on the volatility canvas
+            const canvas = document.getElementById('volatility-canvas');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                const dpr = window.devicePixelRatio || 1;
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                ctx.scale(dpr, dpr);
+
+                ctx.strokeStyle = '#003764';
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(0, rect.height * 0.7);
+                
+                for (let i = 0; i < rect.width; i += 5) {
+                    const y = (rect.height * 0.6) + Math.random() * 20 - 10;
+                    ctx.lineTo(i, y);
+                }
+                ctx.stroke();
+            }
+
+            // Simple search highlight effect
+            const searchInput = document.querySelector('input[type="text"]');
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+            });
+        });
+    </script>
+</body></html>

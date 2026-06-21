@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EcoData Pro | Institutional Economic Intelligence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#56a3ef",
+                        "on-primary-fixed": "#001c38",
+                        "secondary-fixed": "#ffdcbd",
+                        "on-secondary": "#ffffff",
+                        "primary": "#002140",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#001d35",
+                        "success-economic": "#10B981",
+                        "on-primary-fixed-variant": "#1c4876",
+                        "inverse-primary": "#a2c9fe",
+                        "on-error": "#ffffff",
+                        "danger-economic": "#EF4444",
+                        "primary-container": "#003764",
+                        "secondary": "#8a5100",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-container": "#643900",
+                        "on-primary-container": "#7aa1d4",
+                        "outline-variant": "#c3c6d0",
+                        "border-muted": "#E2E8F0",
+                        "surface-container": "#e5eeff",
+                        "tertiary": "#00223e",
+                        "surface-tint": "#38608f",
+                        "primary-fixed-dim": "#a2c9fe",
+                        "surface-subtle": "#F8FAFC",
+                        "on-tertiary-fixed-variant": "#00497b",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#9dcaff",
+                        "secondary-fixed-dim": "#ffb86e",
+                        "secondary-container": "#fc9910",
+                        "primary-fixed": "#d3e4ff",
+                        "background": "#f8f9ff",
+                        "tertiary-container": "#003860",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "inverse-surface": "#213145",
+                        "outline": "#737780",
+                        "surface-container-high": "#dce9ff",
+                        "on-surface-variant": "#42474f",
+                        "tertiary-fixed": "#d1e4ff",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "container-max": "1440px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "data-mono": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .data-card-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 55, 100, 0.05);
+        }
+        .institutional-gradient {
+            background: linear-gradient(135deg, #002140 0%, #003764 100%);
+        }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<nav class="fixed inset-x-0 top-0 z-50 bg-primary dark:bg-primary-container">
+<div class="max-w-container-max mx-auto h-16 px-margin-desktop flex justify-between items-center">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-on-primary dark:text-on-primary-container">EcoData Pro</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-body-md text-body-md text-on-primary border-b-2 border-secondary-container pb-1" href="./dashboard.html">Features</a>
+<a class="font-body-md text-body-md text-on-primary/80 hover:text-on-primary transition-colors duration-200" href="./pricing.html">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 mr-2 border-r border-white/20 pr-4">
+    <button class="text-label-sm font-label-sm text-on-primary hover:text-secondary-container transition-colors">EN</button>
+    <span class="text-white/20 text-label-sm">|</span>
+    <button class="text-label-sm font-label-sm text-on-primary/60 hover:text-secondary-container transition-colors">ES</button>
+</div><button class="font-body-md text-body-md text-on-primary/80 hover:text-on-primary transition-colors" onclick="window.location.href='./users.html'">Login</button>
+<button class="bg-secondary-container text-on-primary-fixed px-6 py-2 rounded-lg font-label-md text-label-md hover:scale-95 transition-transform">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden institutional-gradient">
+<!-- Abstract World Map Background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" data-alt="A sophisticated abstract world map visualization using interconnected data points and glowing nodes. The style is institutional and corporate, featuring a deep navy blue background with subtle cyan and white data trails that suggest global economic connectivity and digital intelligence flow. High-contrast, clean execution typical of financial terminals." data-location="world" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10">
+<div class="max-w-3xl">
+<h1 class="text-on-primary font-display-lg text-display-lg mb-6 leading-tight">
+                    Predictive Intelligence for <span class="text-secondary-container">Global Markets</span>
+</h1>
+<p class="text-on-primary-container font-body-lg text-body-lg mb-10 max-w-2xl">
+                    Institutional grade economic data meets natural language AI. Transform raw indices into actionable strategies with real-time forecasting and cross-asset correlation analysis.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-on-primary text-primary px-8 py-4 rounded font-label-md text-label-md font-bold hover:bg-surface-container transition-colors shadow-lg">
+                        Open Platform
+                    </button>
+<button class="border border-on-primary text-on-primary px-8 py-4 rounded font-label-md text-label-md font-bold hover:bg-on-primary/10 transition-colors">
+                        View Dashboard
+                    </button>
+</div>
+</div>
+</div>
+<!-- Hero Asset: Floating Data Console -->
+<div class="hidden lg:block absolute right-[-5%] top-1/2 -translate-y-1/2 w-1/2">
+<div class="bg-surface-container-lowest/10 backdrop-blur-md border border-white/20 p-6 rounded-xl data-card-shadow rotate-[-2deg]">
+<div class="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-danger-economic"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<div class="w-3 h-3 rounded-full bg-success-economic"></div>
+</div>
+<span class="text-white/60 font-data-mono text-data-mono">TERMINAL_V.2.4</span>
+</div>
+<div class="h-64 flex items-end gap-2 overflow-hidden">
+<!-- Simple CSS bar animation for visual interest -->
+<div class="flex-1 bg-on-tertiary-container/40 rounded-t-sm h-[60%] animate-pulse"></div>
+<div class="flex-1 bg-on-tertiary-container/60 rounded-t-sm h-[85%]"></div>
+<div class="flex-1 bg-secondary-container/80 rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-on-tertiary-container/40 rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-on-tertiary-container/60 rounded-t-sm h-[95%]"></div>
+<div class="flex-1 bg-success-economic/80 rounded-t-sm h-[100%]"></div>
+<div class="flex-1 bg-on-tertiary-container/40 rounded-t-sm h-[65%]"></div>
+<div class="flex-1 bg-on-tertiary-container/60 rounded-t-sm h-[40%]"></div>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-4">
+<div class="bg-white/5 p-3 rounded">
+<p class="text-white/40 text-label-sm uppercase">Global GDP Forecast</p>
+<p class="text-white font-headline-md">+2.4%</p>
+</div>
+<div class="bg-white/5 p-3 rounded">
+<p class="text-white/40 text-label-sm uppercase">Alpha Correlation</p>
+<p class="text-white font-headline-md">0.89</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof Section -->
+<section class="py-12 bg-white border-b border-border-muted">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<p class="text-center font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-8">
+                Trusted by central banks and global financial institutions
+            </p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="h-8 w-32 bg-on-surface-variant/20 rounded-sm"></div>
+<div class="h-8 w-32 bg-on-surface-variant/20 rounded-sm"></div>
+<div class="h-8 w-32 bg-on-surface-variant/20 rounded-sm"></div>
+<div class="h-8 w-32 bg-on-surface-variant/20 rounded-sm"></div>
+<div class="h-8 w-32 bg-on-surface-variant/20 rounded-sm"></div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-24 bg-surface-subtle">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="text-primary font-headline-lg text-headline-lg mb-4">Precision Engineering for Analysts</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto">Our platform combines massive data ingestion with sophisticated LLM-driven reasoning for unprecedented insights.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white p-8 rounded-xl border border-border-muted data-card-shadow hover:border-primary-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">public</span>
+</div>
+<h3 class="text-primary font-headline-md text-headline-md mb-3">Real-time Indices</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                        Live coverage of over 50,000 global indicators including real-time GDP tracking, CPI forecasts, and market volatility indices.
+                    </p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> 180+ Countries Covered</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> Sub-millisecond latency</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> Custom Index Creation</li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-8 rounded-xl border border-border-muted data-card-shadow hover:border-primary-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">function</span>
+</div>
+<h3 class="text-primary font-headline-md text-headline-md mb-3">Math AI</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                        Query complex multi-dimensional datasets using natural language. No more SQL or Python scripts—just ask the intelligence.
+                    </p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> Natural Language Reasoning</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> Automatic Chart Generation</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> Regression on the fly</li>
+</ul>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-8 rounded-xl border border-border-muted data-card-shadow hover:border-primary-container transition-all group">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h3 class="text-primary font-headline-md text-headline-md mb-3">Institutional Security</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">
+                        Enterprise-grade protection for your proprietary analysis. Built for the world's most regulated financial institutions.
+                    </p>
+<ul class="space-y-3 font-label-md text-label-md text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> SOC2 Type II Compliant</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> 256-bit AES Encryption</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-economic text-[18px]">check_circle</span> Private VPC Deployments</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section (Simplified) -->
+<section class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-primary text-on-primary rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+<div class="md:w-1/2 p-12 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container mb-4">Scalable Intelligence</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Designed for Every Tier of Finance</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8">
+                        Whether you're an independent researcher or a global asset manager, EcoData Pro scales with your requirements.
+                    </p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-secondary-container hover:underline group" href="./pricing.html">
+                        See detailed plans and full feature breakdown
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="md:w-1/2 bg-on-primary-fixed-variant p-12 grid grid-cols-1 gap-6">
+<div class="bg-primary-container p-6 rounded-xl border border-white/10 hover:border-white/30 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline-md text-headline-md">Free</span>
+<span class="font-data-mono text-data-mono">$0<span class="text-on-primary-container text-[12px]">/mo</span></span>
+</div>
+<p class="text-on-primary-container font-body-sm text-body-sm">Essential data for individuals.</p>
+</div>
+<div class="bg-primary-container p-6 rounded-xl border border-secondary-container shadow-[0_0_15px_rgba(243,146,0,0.2)]">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md">Plus</span>
+<span class="bg-secondary-container text-primary font-label-sm text-[10px] px-2 rounded uppercase font-bold">Popular</span>
+</div>
+<span class="font-data-mono text-data-mono">$499<span class="text-on-primary-container text-[12px]">/mo</span></span>
+</div>
+<p class="text-on-primary-container font-body-sm text-body-sm">Advanced forecasting &amp; Math AI limits.</p>
+</div>
+<div class="bg-primary-container p-6 rounded-xl border border-white/10 hover:border-white/30 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline-md text-headline-md">Pro</span>
+<span class="font-data-mono text-data-mono">$2,499<span class="text-on-primary-container text-[12px]">/mo</span></span>
+</div>
+<p class="text-on-primary-container font-body-sm text-body-sm">Full API access &amp; VPC deployment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-low"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop relative z-10 text-center">
+<h2 class="text-primary font-display-lg text-display-lg mb-6">Ready to elevate your economic analysis?</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg mb-10 max-w-2xl mx-auto">
+                Join over 20,000 analysts transforming global indices into alpha. Start your 14-day institutional trial today.
+            </p>
+<div class="flex flex-col items-center gap-6">
+<button class="bg-primary text-white px-12 py-5 rounded-full font-label-md text-label-md font-bold hover:scale-105 transition-all shadow-xl active:scale-95">
+                    Review Pricing
+                </button>
+<p class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                    No credit card required. Secure institutional onboarding.
+                </p>
+</div>
+</div>
+<!-- Decorative grid pattern -->
+<div class="absolute bottom-0 left-0 w-full h-full opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#002140 1px, transparent 1px); background-size: 24px 24px;"></div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-8 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 border-t border-border-muted bg-surface-container-lowest dark:bg-on-primary-fixed">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-2">EcoData Pro</span>
+<p class="font-body-sm text-body-sm text-on-surface dark:text-on-surface-variant text-center md:text-left">
+                © 2024 EcoData Pro. All rights reserved. Institutional grade economic intelligence.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline" href="./dashboard.html">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline" href="./pricing.html">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline" href="./users.html">Cookie Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors focus:underline font-bold text-primary" href="./users.html">Contact Support</a>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'bg-primary/95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('shadow-lg', 'bg-primary/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+
+
+</body></html>

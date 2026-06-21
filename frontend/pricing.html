@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing Plans | EcoData Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .pro-glow {
+            box-shadow: 0 0 30px rgba(252, 153, 16, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "primary-fixed": "#d3e4ff",
+                      "secondary-container": "#fc9910",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#003860",
+                      "outline-variant": "#c3c6d0",
+                      "on-error-container": "#93000a",
+                      "on-background": "#0b1c30",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed-variant": "#1c4876",
+                      "on-secondary-fixed-variant": "#693c00",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-subtle": "#F8FAFC",
+                      "surface-container": "#e5eeff",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#001d35",
+                      "secondary-fixed-dim": "#ffb86e",
+                      "on-tertiary-container": "#56a3ef",
+                      "tertiary": "#00223e",
+                      "on-primary-fixed": "#001c38",
+                      "outline": "#737780",
+                      "border-muted": "#E2E8F0",
+                      "on-primary-container": "#7aa1d4",
+                      "tertiary-fixed": "#d1e4ff",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#00497b",
+                      "surface-container-low": "#eff4ff",
+                      "secondary-fixed": "#ffdcbd",
+                      "secondary": "#8a5100",
+                      "on-primary": "#ffffff",
+                      "inverse-primary": "#a2c9fe",
+                      "primary": "#002140",
+                      "danger-economic": "#EF4444",
+                      "primary-fixed-dim": "#a2c9fe",
+                      "surface-dim": "#cbdbf5",
+                      "surface": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#0b1c30",
+                      "surface-tint": "#38608f",
+                      "success-economic": "#10B981",
+                      "surface-variant": "#d3e4fe",
+                      "tertiary-fixed-dim": "#9dcaff",
+                      "on-surface-variant": "#42474f",
+                      "inverse-surface": "#213145",
+                      "primary-container": "#003764",
+                      "on-secondary-fixed": "#2c1600",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#dce9ff",
+                      "on-secondary-container": "#643900"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "unit": "4px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "data-mono": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface-subtle font-body-md text-on-background min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-primary-container text-on-primary-container flex flex-col py-6 px-4 border-r border-outline-variant z-50">
+<div class="mb-10 px-2">
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary tracking-tight">EcoData Pro</h1>
+<p class="font-label-sm text-label-sm text-on-primary/60 uppercase tracking-widest mt-1">Institutional Access</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150 group" href="./dashboard.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150 group" href="./economic-indices.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-body-md text-body-md">Economic Indices</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-secondary-container text-on-secondary-container border-l-4 border-secondary-container font-bold transition-colors active:scale-95 duration-150" href="./pricing.html">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md">Pricing Plans</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150 group" href="./users.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md">User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-primary-container/20 transition-colors active:scale-95 duration-150 group" href="./math-ai.html">
+<span class="material-symbols-outlined" data-icon="functions">functions</span>
+<span class="font-body-md text-body-md">Math AI</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-on-primary/10 space-y-1">
+<button class="w-full mb-4 py-2 bg-on-primary text-primary-container font-bold rounded-lg hover:bg-on-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="download">download</span>
+<span>Export Report</span>
+</button>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary/70 hover:text-on-primary transition-colors" href="./users.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary/70 hover:text-on-primary transition-colors" href="./index.html">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface flex justify-between items-center px-8 border-b border-border-muted z-40">
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border-none rounded-full w-80 text-label-md focus:ring-2 focus:ring-primary transition-all" placeholder="Search indices, reports, policies..." type="text"/>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./dashboard.html">Markets</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./users.html">Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all" href="./dashboard.html">Forecasts</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="h-8 w-px bg-border-muted mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md font-bold text-primary">Dr. Julian Vance</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Chief Economist</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-surface-container-highest object-cover" data-alt="A high-end professional headshot of a mature economist in a navy blue suit, set against a blurred corporate office background with cool, natural lighting. The style is crisp and editorial, maintaining a consistent professional modern aesthetic with a neutral color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD56zHES_kLau6kDQ1HaOo3szNqG3E-pFOLguqFfBtHqS3BKIDqH9VGDlg6U3gXKuknO4XSY56VXgRIyGnp3nw5c50_r-_qqKed0UNNEY8NpTsB_jD5FdLTJ0LMEJjasfhxzuYF6tvzYLndtkE3ohAIllNpLq3-D__loY8BNia9_XCGt0b5op_5kDaFEIPEkIUSLbYzkO1wrKvzxrUvZEC_9ixMndKRhfYOfZMpcYh8JzBPlCQp9uuP1HxYLHSm1Y5afeSV7hTTewvy"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-16 px-8">
+
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<span class="inline-block px-4 py-1.5 bg-primary-container text-on-primary rounded-full font-label-sm text-label-sm mb-6">INSTITUTIONAL GRADE DATA</span>
+<h2 class="font-display-lg text-display-lg text-primary mb-4 tracking-tight">Predictive Intelligence for Global Markets</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Select a subscription tier tailored to your firm's analytic needs. All plans include 256-bit encryption and SOC2 compliant data handling.</p>
+</div>
+</section>
+<!-- Pricing Grid -->
+<section class="px-8 pb-24">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Free Tier -->
+<div class="bg-white border border-border-muted rounded-xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 relative">
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Basic Tier</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Free</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-display-lg font-black text-primary">$0</span>
+<span class="text-on-surface-variant font-label-md">/month</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 italic">Ideal for students and independent researchers exploring basic indicators.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success-economic text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">5 queries / day</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success-economic text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">Standard Economic Indices</span>
+</li>
+<li class="flex items-center gap-3 opacity-40">
+<span class="material-symbols-outlined text-[20px]" data-icon="block">block</span>
+<span class="text-body-md">API Access</span>
+</li>
+<li class="flex items-center gap-3 opacity-40">
+<span class="material-symbols-outlined text-[20px]" data-icon="block">block</span>
+<span class="text-body-md">Math AI Model</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all">
+                        Select Plan
+                    </button>
+</div>
+<!-- Plus Tier -->
+<div class="bg-white border border-border-muted rounded-xl p-8 flex flex-col hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary px-4 py-1 rounded-bl-lg font-label-sm text-[10px] uppercase">Recommended</div>
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Analyst Tier</p>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Plus</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-display-lg font-black text-primary">$129</span>
+<span class="text-on-surface-variant font-label-md">/month</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 italic">Built for professional financial analysts requiring deeper visualization.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success-economic text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">1,000 queries / day</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success-economic text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">Advanced Dynamic Charts</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-success-economic text-[20px]" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-body-md">REST API Access</span>
+</li>
+<li class="flex items-center gap-3 opacity-40">
+<span class="material-symbols-outlined text-[20px]" data-icon="block">block</span>
+<span class="text-body-md">Full Math AI Access</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-container transition-all">
+                        Select Plan
+                    </button>
+</div>
+<!-- Pro Tier (Highlighted with BCCR colors) -->
+<div class="bg-primary-container text-on-primary rounded-xl p-8 flex flex-col pro-glow relative transform scale-105 z-20 border-2 border-secondary-container">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary-container text-on-secondary-container px-6 py-1.5 rounded-full font-bold text-label-sm shadow-lg whitespace-nowrap">
+                        INSTITUTIONAL POWER
+                    </div>
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest mb-2">Organization Tier</p>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Pro</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-display-lg font-black text-secondary-container">$499</span>
+<span class="text-on-primary-container font-label-md">/month</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm text-on-primary-container mb-6 italic">The ultimate solution for hedge funds and policy institutions.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-body-md">Unlimited Global Queries</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" data-icon="functions" style="font-variation-settings: 'FILL' 1;">functions</span>
+<span class="text-body-md font-bold">Math AI Full Integration</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="text-body-md">Priority 24/7 Support</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-body-md">Custom Compliance Node</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container font-black rounded-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_4px_20px_rgba(252,153,16,0.4)]">
+                        Select Plan
+                    </button>
+</div>
+</div>
+</section>
+<!-- Comparison Table (Bento Inspired) -->
+<section class="px-8 pb-24">
+<div class="max-w-container-max mx-auto bg-white rounded-2xl border border-border-muted p-10 overflow-hidden relative">
+<div class="mb-12">
+<h4 class="font-headline-md text-headline-md text-primary">Detailed Feature Matrix</h4>
+<p class="text-on-surface-variant font-body-md">A comprehensive breakdown of technical capabilities across tiers.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="text-left border-b border-border-muted">
+<th class="pb-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Capabilities</th>
+<th class="pb-6 font-label-md text-label-md text-center">Free</th>
+<th class="pb-6 font-label-md text-label-md text-center">Plus</th>
+<th class="pb-6 font-label-md text-label-md text-center text-secondary">Pro</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-muted">
+<tr>
+<td class="py-6 font-body-md text-primary font-bold">Historical Data Reach</td>
+<td class="py-6 text-center text-on-surface-variant">2 Years</td>
+<td class="py-6 text-center text-on-surface-variant">10 Years</td>
+<td class="py-6 text-center text-primary font-bold">Unlimited</td>
+</tr>
+<tr>
+<td class="py-6 font-body-md text-primary font-bold">Predictive Modeling</td>
+<td class="py-6 text-center"><span class="material-symbols-outlined text-error" data-icon="close">close</span></td>
+<td class="py-6 text-center text-on-surface-variant">Basic (Linear)</td>
+<td class="py-6 text-center text-primary font-bold">Advanced (Neural)</td>
+</tr>
+<tr>
+<td class="py-6 font-body-md text-primary font-bold">Team Collaboration</td>
+<td class="py-6 text-center text-on-surface-variant">Personal</td>
+<td class="py-6 text-center text-on-surface-variant">Up to 5 seats</td>
+<td class="py-6 text-center text-primary font-bold">Unlimited seats</td>
+</tr>
+<tr>
+<td class="py-6 font-body-md text-primary font-bold">Custom Data Ingestion</td>
+<td class="py-6 text-center"><span class="material-symbols-outlined text-error" data-icon="close">close</span></td>
+<td class="py-6 text-center"><span class="material-symbols-outlined text-error" data-icon="close">close</span></td>
+<td class="py-6 text-center"><span class="material-symbols-outlined text-success-economic" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Visual Footer Asset -->
+<section class="px-8 pb-16">
+<div class="max-w-container-max mx-auto h-[300px] rounded-2xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A wide angle cinematic shot of a futuristic data operations center with multiple curved holographic screens displaying complex global economic heatmaps and live market trends. The room is dimly lit with deep blue atmospheric lighting, reflecting off sleek polished surfaces. The overall mood is focused, high-stakes, and technologically superior, maintaining the Corporate Modern institutional aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFIlDX7e2EYxMVxt-ELMTmK_1Wmuz3-rZQHHeggjcG6BUz6TsHmN5YltG0Y5DxUP8kSEw8grsAnJNoNL5SSAQs9JX7HJCbuk79LaTrRBSUV_3RACMu0jlj0TBTSdHSI-M86XTkhbRIjJP5xB2njKum1lmFBPZx8XhbYGe7AuiGbvm6rTgMORyzoQTv690BSN-TG3jGo0m9hrHlsreUZnpskjewCDaPVZqiTumRy1P-oyvR4gfHd4pg2brkekSM9PYww3481L0DgJ8z')"></div>
+<div class="absolute bottom-8 left-8 z-20">
+<h5 class="text-white font-headline-md text-headline-md mb-2">Institutional Security by Design</h5>
+<p class="text-white/70 font-body-md max-w-lg">Our infrastructure is audited annually to meet the rigorous demands of central banks and international financial regulatory bodies.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                // Subtle lift or feedback can be added here if needed
+            });
+        });
+
+        // Sticky header transition
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+                header.classList.add('bg-white/95');
+                header.classList.add('backdrop-blur-md');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.remove('bg-white/95');
+                header.classList.remove('backdrop-blur-md');
+            }
+        });
+    </script>
+</body></html>
